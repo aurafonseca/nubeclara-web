@@ -8,13 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<!--
-  CAMBIAR antes de publicar:
-  1. Teléfono de WhatsApp (busca 57XXXXXXXXXX).
-  2. Correo (busca est.aura.fonseca@unimilitar.edu.co).
-  3. ID de Formspree en los formularios (busca TU_ID). Crea uno gratis en formspree.io.
-  4. Nombre, NIT y datos reales en "Nosotros" y en la política de datos.
--->
+<!-- PENDIENTE: reemplaza TU_ID por tu código de Formspree (formspree.io) en los dos formularios. -->
 <style>
   :root {
     --bg: #F5F8F7;
@@ -140,6 +134,14 @@
   .resource { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--mustard); border-radius: 10px; padding: 1.8rem; }
   @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
 
+  /* Empresa formalizada */
+  .formal { background: var(--surface); border-top: 1px solid var(--line); }
+  .formal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+  .formal-grid > div { border-top: 4px solid var(--petrol); padding-top: 1rem; }
+  .formal-grid h3 { margin-bottom: .3rem; }
+  .formal-grid .who { color: var(--muted); font-size: .95rem; margin: 0 0 .6rem; }
+  @media (max-width: 860px) { .formal-grid { grid-template-columns: 1fr; } }
+
   /* Formularios */
   form { display: grid; gap: 1rem; }
   label { font-weight: 700; display: grid; gap: .35rem; }
@@ -152,12 +154,12 @@
   .check input { width: auto; margin-top: .3rem; }
 
   /* Contacto */
-  .contact { background: var(--surface); border-top: 1px solid var(--line); }
+  .contact { background: var(--bg); border-top: 1px solid var(--line); }
   .channels { list-style: none; padding: 0; margin: 1.2rem 0 0; }
   .channels li { margin-bottom: .8rem; }
 
   /* Pie */
-  footer { padding-block: 2.5rem; color: var(--muted); font-size: .95rem; }
+  footer { padding-block: 2.5rem; color: var(--muted); font-size: .95rem; border-top: 1px solid var(--line); }
   footer .wrap { display: grid; gap: 1rem; }
   details { border-top: 1px solid var(--line); padding-top: 1rem; }
   summary { cursor: pointer; font-weight: 700; color: var(--ink); }
@@ -178,6 +180,7 @@
         <li><a href="#casos">Casos</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#empresa">Empresa</a></li>
         <li><a class="btn" href="#contacto">Agenda tu diagnóstico</a></li>
       </ul>
     </nav>
@@ -284,7 +287,6 @@
         <p>Automatizamos la lectura y el registro de facturas electrónicas.</p>
         <p class="result">20 horas al mes ahorradas por analista</p>
       </article>
-      <!-- CAMBIAR: reemplaza estos casos de ejemplo por proyectos reales y pide autorización a cada cliente. -->
       <p class="note">Nombres de clientes reservados por confidencialidad.</p>
     </div>
   </section>
@@ -327,6 +329,51 @@
           <label class="check"><input type="checkbox" name="autorizacion_datos" required> Autorizo el tratamiento de mis datos según la política de datos personales.</label>
           <button class="btn" type="submit">Enviarme el checklist</button>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="formal" id="empresa">
+    <div class="wrap">
+      <h2>Empresa formalizada</h2>
+      <p>NubeClara Consultores es una sociedad por acciones simplificada (S.A.S.) con domicilio en Bogotá, constituida conforme a la Ley 1258 de 2008. Estos son los documentos que respaldan nuestra operación legal.</p>
+      <div class="formal-grid">
+        <div>
+          <h3>Documentos legales</h3>
+          <p class="who">Constitución y relación con clientes</p>
+          <ul class="creds">
+            <li>Estatutos de la sociedad (Ley 1258 de 2008)</li>
+            <li>Cartas de aceptación del representante legal</li>
+            <li>Contrato marco de consultoría</li>
+            <li>Acuerdo de confidencialidad con clientes</li>
+            <li>Política de tratamiento de datos personales (Ley 1581 de 2012)</li>
+            <li>Registro de marca ante la Superintendencia de Industria y Comercio</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Cámara de Comercio de Bogotá</h3>
+          <p class="who">Registro mercantil</p>
+          <ul class="creds">
+            <li>Consulta de homonimia del nombre</li>
+            <li>Formulario RUES</li>
+            <li>Matrícula mercantil</li>
+            <li>Inscripción de libros de accionistas y de actas</li>
+            <li>Certificado de existencia y representación legal</li>
+            <li>Renovación anual de la matrícula antes del 31 de marzo</li>
+          </ul>
+        </div>
+        <div>
+          <h3>DIAN</h3>
+          <p class="who">Obligaciones tributarias</p>
+          <ul class="creds">
+            <li>Registro Único Tributario (RUT) y NIT</li>
+            <li>Firma electrónica y usuario en el portal DIAN</li>
+            <li>Habilitación como facturador electrónico</li>
+            <li>Resolución de numeración de facturación</li>
+            <li>Declaraciones de renta, IVA y retención en la fuente</li>
+            <li>Registro de ICA ante la Secretaría Distrital de Hacienda de Bogotá</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -378,7 +425,6 @@
       <summary>Política de tratamiento de datos personales</summary>
       <p>NubeClara Consultores S.A.S. es responsable del tratamiento de los datos que nos envías por este sitio, conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013. Usamos tu nombre, correo y datos de la empresa solo para responder tu solicitud y enviarte la información que pediste.</p>
       <p>Puedes conocer, actualizar, rectificar o pedir la eliminación de tus datos escribiendo a est.aura.fonseca@unimilitar.edu.co. No vendemos ni compartimos tus datos con terceros, salvo los proveedores tecnológicos necesarios para operar este sitio.</p>
-      <!-- CAMBIAR: revisa este texto con un abogado y complétalo con los datos reales de la empresa. -->
     </details>
   </div>
 </footer>
