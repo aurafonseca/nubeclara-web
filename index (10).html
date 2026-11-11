@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NubeClara Consultores | Consultoría de TI para pymes en Bogotá</title>
+<meta name="description" content="Ordenamos la tecnología de tu pyme: nube, ciberseguridad, datos y automatización. Diagnóstico digital en 2 semanas y resultados medibles en 90 días. Bogotá, Colombia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<!--
+  CAMBIAR antes de publicar:
+  1. Teléfono de WhatsApp (busca 57XXXXXXXXXX).
+  2. Correo (busca est.aura.fonseca@unimilitar.edu.co).
+  3. ID de Formspree en los formularios (busca TU_ID). Crea uno gratis en formspree.io.
+  4. Nombre, NIT y datos reales en "Nosotros" y en la política de datos.
+-->
+<style>
+  :root {
+    --bg: #F5F8F7;
+    --surface: #FFFFFF;
+    --ink: #1B2A33;
+    --muted: #51626C;
+    --petrol: #24566E;
+    --petrol-soft: #DCE7EB;
+    --mustard: #E3A92B;
+    --line: #C9D6DB;
+    --on-petrol: #FFFFFF;
+    --wrap: 72rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --bg: #12191E;
+      --surface: #1A242B;
+      --ink: #E6EEF1;
+      --muted: #9FB1BA;
+      --petrol: #6FA9C4;
+      --petrol-soft: #1F3340;
+      --mustard: #EDBB4C;
+      --line: #2E3F49;
+      --on-petrol: #0E171C;
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 1.0625rem/1.6 "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  }
+  img, svg { max-width: 100%; }
+  a { color: var(--petrol); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid var(--mustard); outline-offset: 2px;
+  }
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.12; margin: 0 0 .6em; letter-spacing: -0.01em;
+  }
+  h1 { font-size: clamp(2.3rem, 5.5vw, 3.9rem); font-weight: 700; }
+  h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 700; }
+  h3 { font-size: 1.25rem; font-weight: 500; }
+  p { margin: 0 0 1em; max-width: 62ch; }
+  .wrap { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
+  section { padding-block: clamp(3.5rem, 8vw, 6rem); }
+
+  /* Encabezado */
+  .top { border-bottom: 1px solid var(--line); background: var(--bg); position: sticky; top: 0; z-index: 5; }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .9rem; }
+  .brand { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: .5rem; }
+  .brand svg { width: 34px; height: 22px; }
+  nav ul { list-style: none; display: flex; gap: 1.4rem; margin: 0; padding: 0; align-items: center; }
+  nav a { color: var(--ink); text-decoration: none; }
+  nav a:hover { color: var(--petrol); text-decoration: underline; }
+  .btn {
+    display: inline-block; background: var(--petrol); color: var(--on-petrol);
+    padding: .75rem 1.3rem; border-radius: 6px; text-decoration: none; font-weight: 700;
+    border: 2px solid var(--petrol); cursor: pointer; font: inherit; font-weight: 700;
+  }
+  .btn:hover { background: transparent; color: var(--petrol); }
+  .btn.ghost { background: transparent; color: var(--petrol); }
+  .btn.ghost:hover { background: var(--petrol-soft); }
+  nav .btn { padding: .5rem 1rem; }
+  @media (max-width: 760px) { nav li:not(:last-child) { display: none; } }
+
+  /* Hero */
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3rem; align-items: center; }
+  .hero p.lead { font-size: 1.2rem; color: var(--muted); }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
+  .figure { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem; }
+  .figure figcaption { color: var(--muted); font-size: .95rem; margin-top: .4rem; }
+  .tangle { fill: none; stroke: var(--muted); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: draw 2.4s ease-out .2s forwards; }
+  .straight { fill: none; stroke: var(--petrol); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 200; stroke-dashoffset: 200; animation: draw .9s ease-out 2.4s forwards; }
+  .cloud { fill: var(--petrol-soft); stroke: var(--petrol); stroke-width: 3; opacity: 0; animation: appear .6s ease-out 3.1s forwards; }
+  .tag { fill: var(--muted); font: 700 15px "Atkinson Hyperlegible", sans-serif; }
+  .tag.end { fill: var(--petrol); opacity: 0; animation: appear .6s ease-out 3.1s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes appear { to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    .tangle, .straight { animation: none; stroke-dashoffset: 0; }
+    .cloud, .tag.end { animation: none; opacity: 1; }
+  }
+  @media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } }
+
+  /* Servicios */
+  .services { background: var(--surface); border-block: 1px solid var(--line); }
+  .service-list { margin-top: 2rem; border-top: 2px solid var(--ink); }
+  .service { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 2rem; padding-block: 1.6rem; border-bottom: 1px solid var(--line); }
+  .service h3 { margin: 0; }
+  .service .problem { color: var(--muted); margin: 0; }
+  .service ul { margin: 0; padding-left: 1.1rem; }
+  .service .time { font-weight: 700; color: var(--petrol); margin: 0; }
+  @media (max-width: 860px) { .service { grid-template-columns: 1fr; gap: .6rem; } }
+
+  /* Proceso */
+  .steps { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; counter-reset: paso; }
+  .steps li { counter-increment: paso; border-top: 4px solid var(--mustard); padding-top: 1rem; }
+  .steps li::before { content: counter(paso); font: 700 2.4rem/1 "Bricolage Grotesque", sans-serif; color: var(--petrol); display: block; margin-bottom: .5rem; }
+  .steps p { color: var(--muted); margin: 0; }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+  /* Casos */
+  .cases { background: var(--petrol-soft); }
+  .case { display: grid; grid-template-columns: 12rem 1fr 15rem; gap: 2rem; padding-block: 1.5rem; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .case:first-of-type { border-top: 1px solid var(--line); margin-top: 2rem; }
+  .case .who { font-weight: 700; }
+  .case p { margin: 0; }
+  .case .result { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--petrol); line-height: 1.25; }
+  @media (max-width: 860px) { .case { grid-template-columns: 1fr; gap: .4rem; } }
+  .note { color: var(--muted); font-size: .95rem; margin-top: 1.2rem; }
+
+  /* Nosotros y recurso */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .creds { list-style: none; padding: 0; margin: 1rem 0 0; }
+  .creds li { padding: .55rem 0; border-bottom: 1px solid var(--line); }
+  .resource { background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--mustard); border-radius: 10px; padding: 1.8rem; }
+  @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+
+  /* Formularios */
+  form { display: grid; gap: 1rem; }
+  label { font-weight: 700; display: grid; gap: .35rem; }
+  input, textarea, select {
+    font: inherit; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 6px; padding: .7rem .8rem; width: 100%;
+  }
+  textarea { min-height: 7rem; resize: vertical; }
+  .check { font-weight: 400; display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; }
+  .check input { width: auto; margin-top: .3rem; }
+
+  /* Contacto */
+  .contact { background: var(--surface); border-top: 1px solid var(--line); }
+  .channels { list-style: none; padding: 0; margin: 1.2rem 0 0; }
+  .channels li { margin-bottom: .8rem; }
+
+  /* Pie */
+  footer { padding-block: 2.5rem; color: var(--muted); font-size: .95rem; }
+  footer .wrap { display: grid; gap: 1rem; }
+  details { border-top: 1px solid var(--line); padding-top: 1rem; }
+  summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+  details p { max-width: 75ch; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="NubeClara Consultores, inicio">
+      <svg viewBox="0 0 34 22" aria-hidden="true"><path d="M8 20h18a6 6 0 0 0 .6-12A8 8 0 0 0 11.3 7 6.5 6.5 0 0 0 8 20Z" fill="var(--petrol-soft)" stroke="var(--petrol)" stroke-width="2"/></svg>
+      NubeClara
+    </a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#casos">Casos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a class="btn" href="#contacto">Agenda tu diagnóstico</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>La tecnología de tu empresa, en orden en 90 días.</h1>
+        <p class="lead">Somos una consultora de TI en Bogotá para pymes sin área de sistemas. Migramos a la nube, protegemos tus datos y automatizamos el trabajo repetitivo, con precio cerrado y resultados que puedes medir.</p>
+        <div class="actions">
+          <a class="btn" href="#contacto">Agenda tu diagnóstico</a>
+          <a class="btn ghost" href="#casos">Ver casos de clientes</a>
+        </div>
+      </div>
+      <figure class="figure">
+        <svg viewBox="0 0 520 280" role="img" aria-label="Una línea enredada que se convierte en una línea recta hacia una nube">
+          <path class="tangle" d="M24 150 C 60 50, 110 250, 140 140 S 210 40, 185 170 S 80 235, 150 115 S 270 215, 250 150 S 300 90, 320 150"/>
+          <path class="straight" d="M320 150 L 400 150"/>
+          <path class="cloud" d="M410 185h70a26 26 0 0 0 2-52 34 34 0 0 0-64-6 28 28 0 0 0-8 58Z"/>
+          <text class="tag" x="24" y="262">Hoy: archivos sueltos, claves en papel</text>
+          <text class="tag end" x="388" y="230">En 90 días</text>
+        </svg>
+        <figcaption>Primero entendemos tu desorden; después lo convertimos en un plan simple.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="services" id="servicios">
+    <div class="wrap">
+      <h2>Servicios</h2>
+      <p>Cada servicio parte de un problema concreto de tu negocio y termina en entregables que quedan en tus manos.</p>
+      <div class="service-list">
+        <article class="service">
+          <h3>Diagnóstico digital</h3>
+          <div>
+            <p class="problem">No sabes en qué gastas en tecnología ni por dónde empezar.</p>
+            <ul><li>Inventario de equipos, software y licencias</li><li>Mapa de riesgos</li><li>Hoja de ruta priorizada de 90 días</li></ul>
+          </div>
+          <p class="time">2 semanas, precio fijo</p>
+        </article>
+        <article class="service">
+          <h3>Migración a la nube</h3>
+          <div>
+            <p class="problem">Tu servidor está viejo y si se daña pierdes la información.</p>
+            <ul><li>Paso a Microsoft 365, Google Workspace o Azure</li><li>Copias de seguridad automáticas</li><li>Control mensual de costos</li></ul>
+          </div>
+          <p class="time">4 a 8 semanas</p>
+        </article>
+        <article class="service">
+          <h3>Ciberseguridad y datos personales</h3>
+          <div>
+            <p class="problem">Manejas datos de clientes y no tienes cómo demostrar que los proteges.</p>
+            <ul><li>Gestión de accesos y contraseñas</li><li>Política de tratamiento de datos (Ley 1581 de 2012)</li><li>Capacitación del equipo</li></ul>
+          </div>
+          <p class="time">3 a 6 semanas</p>
+        </article>
+        <article class="service">
+          <h3>Datos y automatización</h3>
+          <div>
+            <p class="problem">Tu equipo pasa días armando informes y copiando datos a mano.</p>
+            <ul><li>Tableros gerenciales en Power BI</li><li>Flujos automáticos con Power Automate</li><li>Integración con facturación electrónica</li></ul>
+          </div>
+          <p class="time">4 a 10 semanas</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <div class="wrap">
+      <h2>Cómo trabajamos</h2>
+      <ol class="steps">
+        <li><h3>Diagnóstico</h3><p>Revisamos tu tecnología y tus procesos en dos semanas.</p></li>
+        <li><h3>Plan</h3><p>Te entregamos prioridades, costos y fechas, sin letra pequeña.</p></li>
+        <li><h3>Implementación</h3><p>Ejecutamos por etapas para que tu operación no se detenga.</p></li>
+        <li><h3>Acompañamiento</h3><p>Capacitamos a tu equipo y damos soporte mensual si lo necesitas.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="cases" id="casos">
+    <div class="wrap">
+      <h2>Casos de clientes</h2>
+      <article class="case">
+        <p class="who">Empresa de logística, 45 personas</p>
+        <p>Pasamos sus servidores locales a Microsoft 365 y Azure.</p>
+        <p class="result">30 % menos en costos de infraestructura</p>
+      </article>
+      <article class="case">
+        <p class="who">Distribuidora de alimentos</p>
+        <p>Conectamos el ERP y sus hojas de Excel en un tablero de Power BI.</p>
+        <p class="result">Informes de 3 días a 15 minutos</p>
+      </article>
+      <article class="case">
+        <p class="who">Clínica odontológica</p>
+        <p>Copias de seguridad, control de accesos y política de datos personales.</p>
+        <p class="result">Recuperación en menos de 4 horas</p>
+      </article>
+      <article class="case">
+        <p class="who">Firma contable</p>
+        <p>Automatizamos la lectura y el registro de facturas electrónicas.</p>
+        <p class="result">20 horas al mes ahorradas por analista</p>
+      </article>
+      <!-- CAMBIAR: reemplaza estos casos de ejemplo por proyectos reales y pide autorización a cada cliente. -->
+      <p class="note">Nombres de clientes reservados por confidencialidad.</p>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="wrap split">
+      <div>
+        <h2>Nosotros</h2>
+        <p>NubeClara Consultores S.A.S. nació en Bogotá para que las pymes usen la tecnología como lo hacen las grandes empresas, sin tener un departamento de sistemas.</p>
+        <p>Hablamos en términos de negocio: cuánto ahorras, qué riesgo eliminas y cuánto tiempo recupera tu equipo.</p>
+      </div>
+      <div>
+        <h3>Certificaciones y metodologías</h3>
+        <ul class="creds">
+          <li>AWS Solutions Architect y Microsoft Azure Fundamentals</li>
+          <li>ISO/IEC 27001 para seguridad de la información</li>
+          <li>ITIL 4 y Scrum para gestión de proyectos</li>
+          <li>Microsoft Power BI y Power Automate</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="recursos">
+    <div class="wrap split">
+      <div>
+        <h2>Recursos gratuitos</h2>
+        <p>Guías cortas para que tomes mejores decisiones de tecnología, aunque no trabajes con nosotros.</p>
+        <p><a href="#">¿Nube o servidor propio? Cómo decidir en tu pyme</a></p>
+        <p><a href="#">Qué exige la Ley 1581 a una pyme que guarda datos de clientes</a></p>
+      </div>
+      <div class="resource">
+        <h3>Checklist de ciberseguridad para pymes</h3>
+        <p>20 puntos para revisar en una tarde. Te lo enviamos al correo.</p>
+        <form action="https://formspree.io/f/TU_ID" method="POST">
+          <input type="hidden" name="_subject" value="Descarga checklist de ciberseguridad">
+          <label>Correo de trabajo
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label class="check"><input type="checkbox" name="autorizacion_datos" required> Autorizo el tratamiento de mis datos según la política de datos personales.</label>
+          <button class="btn" type="submit">Enviarme el checklist</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="wrap split">
+      <div>
+        <h2>Agenda tu diagnóstico</h2>
+        <p>Cuéntanos en dos líneas qué te preocupa de tu tecnología. Te respondemos en un día hábil.</p>
+        <ul class="channels">
+          <li>WhatsApp: <a href="https://wa.me/5732208205670">+57 32208205670</a></li>
+          <li>Correo: <a href="mailto:est.aura.fonseca@unimilitar.edu.co">est.aura.fonseca@unimilitar.edu.co</a></li>
+          <li>Bogotá D.C., Colombia</li>
+        </ul>
+      </div>
+      <form action="https://formspree.io/f/TU_ID" method="POST">
+        <input type="hidden" name="_subject" value="Nueva solicitud de diagnóstico">
+        <label>Nombre
+          <input type="text" name="nombre" required autocomplete="name">
+        </label>
+        <label>Empresa
+          <input type="text" name="empresa" required autocomplete="organization">
+        </label>
+        <label>Correo
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>Número de empleados
+          <select name="empleados">
+            <option>1 a 10</option>
+            <option>11 a 50</option>
+            <option>51 a 200</option>
+            <option>Más de 200</option>
+          </select>
+        </label>
+        <label>¿Qué te gustaría resolver?
+          <textarea name="mensaje" required></textarea>
+        </label>
+        <label class="check"><input type="checkbox" name="autorizacion_datos" required> Autorizo el tratamiento de mis datos según la política de datos personales.</label>
+        <button class="btn" type="submit">Solicitar diagnóstico</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 NubeClara Consultores S.A.S., NIT por asignar, Bogotá D.C.</p>
+    <details id="politica-datos">
+      <summary>Política de tratamiento de datos personales</summary>
+      <p>NubeClara Consultores S.A.S. es responsable del tratamiento de los datos que nos envías por este sitio, conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013. Usamos tu nombre, correo y datos de la empresa solo para responder tu solicitud y enviarte la información que pediste.</p>
+      <p>Puedes conocer, actualizar, rectificar o pedir la eliminación de tus datos escribiendo a est.aura.fonseca@unimilitar.edu.co. No vendemos ni compartimos tus datos con terceros, salvo los proveedores tecnológicos necesarios para operar este sitio.</p>
+      <!-- CAMBIAR: revisa este texto con un abogado y complétalo con los datos reales de la empresa. -->
+    </details>
+  </div>
+</footer>
+
+</body>
+</html>
